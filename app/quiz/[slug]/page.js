@@ -84,7 +84,7 @@ export default function page({ params }) {
                                     </div>
                                 </div>
 
-                                <div className="flex mt-8 gap-6 min-h-32 content-center flex-wrap justify-center max-w-3xl ">
+                                <div className="flex mt-8 gap-6 min-h-32 m-auto content-center flex-wrap justify-center max-w-3xl ">
                                     <Answers id={questions[currentIndex]._id} answers={questions[currentIndex].allAnswers} selectedAnswer={selectedAnswer} selectAnswer={selectAnswer} />
                                 </div>
                             </div>

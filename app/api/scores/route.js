@@ -27,7 +27,7 @@ export async function POST(req) {
         const newScore = new Score({ pseudo, score, category })
         const save = await newScore.save();
 
-        return NextResponse.json({ message: 'Score bien enregistré', save });
+        return NextResponse.json({ result: true, message: 'Score bien enregistré', save });
     } catch (error) {
         console.error(error);
         return NextResponse.json(

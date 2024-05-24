@@ -1,5 +1,5 @@
 export default async function page() {
-    const res = await fetch(`http://localhost:3000/api/scores`, { cache: 'no-store' });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_DB_HOST}/api/scores`, { cache: 'no-store' });
     const data = await res.json()
     return (
         <div className="grow flex flex-col gap-10 items-center mt-10 lg:mt-0 lg:justify-center max-w-screen-lg w-full m-auto px-4">

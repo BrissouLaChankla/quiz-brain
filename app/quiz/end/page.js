@@ -11,12 +11,12 @@ export default function page() {
 
 
     const saveScore = async () => {
-        if (pseudoRef.current.value.length <= 3) {
-            alert("Pseudo plus long")
+        if (pseudoRef.current.value.length < 3) {
+            alert("Il te faut un pseudo + long !")
             return;
         }
         setSending(true);
-        const data = await fetch('http://localhost:3000/api/scores', {
+        await fetch(`${process.env.NEXT_PUBLIC_DB_HOST}/api/scores`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -24,7 +24,6 @@ export default function page() {
             },
             body: JSON.stringify({ pseudo: pseudoRef.current.value, score, category })
         });
-        const res = await data.json();
         router.push('/leaderboard')
     }
 
