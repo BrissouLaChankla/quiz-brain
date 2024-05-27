@@ -23,11 +23,10 @@ export default async function page() {
                                     <td>{player.pseudo}</td>
                                     <td>{player.score}</td>
                                     <td>{player.category}</td>
-                                    <td>{new Date(player.createdAt).toLocaleDateString()}</td>
+                                    <td>{new Date(player.createdAt).toLocaleDateString('en-GB')}</td>
                                 </tr>
                             )
                         })}
-
                     </tbody>
                 </table>
             </div>
