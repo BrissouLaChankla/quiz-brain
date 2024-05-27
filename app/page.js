@@ -9,7 +9,7 @@ export default async function Home() {
       <div className="w-full">
         <h1 className="text-center">Sur quel sujet vous voulez <span className="outlined px-2">bûcher</span> ?</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-16">
-          {categories.map((el, i) => <CategoryCard index={i}  {...el} />)}
+          {categories.map((el, i) => <CategoryCard key={i} index={i}  {...el} />)}
         </div>
       </div>
     </div>

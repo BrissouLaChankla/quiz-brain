@@ -9,7 +9,7 @@ export default function page() {
     const pseudoRef = useRef(null)
     const [sending, setSending] = useState(false);
 
-
+    console.log(process.env.NEXT_PUBLIC_DB_HOST)
     const saveScore = async () => {
         if (pseudoRef.current.value.length < 3) {
             alert("Il te faut un pseudo + long !")
@@ -35,7 +35,7 @@ export default function page() {
         <div className="grow pt-24 flex flex-col items-center gap-14 ">
             <h1 className='text-center'>Félicitations, votre score est de  <span className="outlined">{score}/10</span> </h1>
             <label className="input input-bordered flex items-center gap-2 max-w-96 pe-0 border-primary border-2">
-                <input required type="text" className="grow" placeholder="Pseudo" minlength="3" maxlength="20" ref={pseudoRef} />
+                <input required type="text" className="grow" placeholder="Pseudo" minLength="3" maxLength="20" ref={pseudoRef} />
                 <span className={`btn btn-primary w-32 ${sending ? "btn-disabled" : ""}`} onClick={() => saveScore()}>{sending ? <span className="loading loading-spinner loading-sm"></span> : "M'enregistrer"}</span>
             </label>
             <img className='mix-blend-multiply max-h-[400px]' src="/illustrations/end.png" alt="end illustration" />

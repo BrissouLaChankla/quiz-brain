@@ -29,7 +29,8 @@ export default function page({ params }) {
 
     useEffect(() => {
         // Send to end page when game is over
-        if (currentIndex === questions.length && questions.length > 0) {
+        // if (currentIndex === questions.length && questions.length > 0) {
+        if (currentIndex === 1) {
             router.push('/quiz/end')
         }
     }, [currentIndex]);
