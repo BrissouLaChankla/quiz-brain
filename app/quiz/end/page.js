@@ -9,7 +9,6 @@ export default function page() {
     const pseudoRef = useRef(null)
     const [sending, setSending] = useState(false);
 
-    console.log(process.env.NEXT_PUBLIC_DB_HOST)
     const saveScore = async () => {
         if (pseudoRef.current.value.length < 3) {
             alert("Il te faut un pseudo + long !")
