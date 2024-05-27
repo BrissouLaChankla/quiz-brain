@@ -3,7 +3,7 @@ export default async function page() {
     const data = await res.json()
     return (
         <div className="grow flex flex-col gap-10 items-center mt-10 lg:mt-0 lg:justify-center max-w-screen-lg w-full m-auto px-4">
-            <h1 className="lg:-mt-14">
+            <h1 className="lg:-mt-14 text-center">
                 Voici la crème de la <span className="outlined">crème</span>
             </h1>
             <div className="overflow-x-auto w-full border-primary border-[3px] rounded-xl h-96  ">

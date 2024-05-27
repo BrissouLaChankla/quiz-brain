@@ -31,7 +31,7 @@ export default function page() {
     }
 
     return (
-        <div className="grow pt-24 flex flex-col items-center gap-14 ">
+        <div className="grow pt-24 flex flex-col items-center gap-14 px-4">
             <h1 className='text-center'>Félicitations, votre score est de  <span className="outlined">{score}/10</span> </h1>
             <label className="input input-bordered flex items-center gap-2 max-w-96 pe-0 border-primary border-2">
                 <input required type="text" className="grow" placeholder="Pseudo" minLength="3" maxLength="20" ref={pseudoRef} />
