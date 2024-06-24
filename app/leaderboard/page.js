@@ -1,7 +1,7 @@
+import Leaderboard from "@/components/Leaderboard";
+import { Suspense } from "react";
 
-export default async function page() {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_DB_HOST}/api/scores`, { cache: 'no-store' });
-    const { scores } = await res.json()
+export default function page() {
 
     return (
         <div className="grow flex flex-col gap-10 items-center mt-10 lg:mt-0 lg:justify-center max-w-screen-lg w-full m-auto px-4">
@@ -18,24 +18,9 @@ export default async function page() {
                             <th>Date</th>
                         </tr>
                     </thead>
-                    {
-                        !!scores.length ?
-                            scores.map((player, i) => {
-                                return (
-                                    <tbody >
-                                        <tr key={player._id} className={`font-medium ${i % 2 === 0 ? "bg-primary/10" : ""}`}>
-                                            <td>{player.pseudo}</td>
-                                            <td>{player.score}</td>
-                                            <td>{player.category}</td>
-                                            <td>{new Date(player.createdAt).toLocaleDateString('en-GB')}</td>
-                                        </tr>
-                                    </tbody>
-                                )
-                            })
-                            :
-                            <span className="loading loading-spinner text-primary loading-md absolute left-1/2 top-48"></span>
-                    }
-
+                    <Suspense fallback={<span className="loading loading-spinner text-primary loading-md absolute left-1/2 top-48"></span>}>
+                        <Leaderboard />
+                    </Suspense>
                 </table>
             </div>
         </div>
